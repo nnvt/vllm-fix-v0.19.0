@@ -140,6 +140,7 @@ class Qwen3NextSparseMoeBlock(nn.Module):
                 reduce_results=False,
                 expert_gate=self.shared_expert_gate,
                 prefix=f"{prefix}.shared_expert",
+                is_sequence_parallel=self.is_sequence_parallel,
             )
         else:
             self.shared_expert = None
